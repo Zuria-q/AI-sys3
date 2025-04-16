@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-TRPG 叙事系统</title>
+  <script>
+    // 单页应用的GitHub Pages重定向脚本
+    // 获取当前URL路径
+    var pathSegments = window.location.pathname.split('/');
+    var repoName = pathSegments[1];
+    var path = pathSegments.slice(2).join('/');
+    
+    // 重定向到首页，但保留路径信息在hash中
+    var redirectUrl = window.location.protocol + '//' + window.location.hostname + 
+                     (window.location.port ? ':' + window.location.port : '') +
+                     '/' + repoName + '/#/' + path;
+    
+    window.location.replace(redirectUrl);
+  </script>
+</head>
+<body>
+  <h1 style="text-align: center; margin-top: 50px; font-family: sans-serif;">正在重定向...</h1>
+</body>
+</html>
