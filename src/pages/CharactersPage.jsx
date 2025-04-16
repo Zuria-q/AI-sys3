@@ -93,13 +93,9 @@ const CharactersPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {characters.map((character) => (
             <div key={character.id} className="card bg-base-100 shadow-xl overflow-hidden">
-              <figure className="h-48 overflow-hidden">
-                <img 
-                  src={character.image || '/images/placeholder-character.jpg'} 
-                  alt={character.name}
-                  className="w-full h-full object-cover transition-transform hover:scale-110" 
-                />
-              </figure>
+              <div className="h-24 flex items-center justify-center bg-secondary text-white">
+                <span className="text-xl font-bold">{character.name}</span>
+              </div>
               <div className="card-body">
                 <div className="flex justify-between items-start">
                   <div>

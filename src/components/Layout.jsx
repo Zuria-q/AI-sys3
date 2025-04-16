@@ -25,8 +25,7 @@ const Layout = () => {
       <header className="bg-primary dark:bg-gray-800 text-white shadow-md">
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-2">
-              <img src="/images/logo.svg" alt="Logo" className="h-8 w-8" />
+            <div className="flex items-center">
               <h1 className="text-xl font-bold">AI-TRPG 叙事系统</h1>
             </div>
             

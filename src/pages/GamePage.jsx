@@ -15,7 +15,7 @@ const GamePage = () => {
         id: 1, 
         name: '艾莉娅', 
         role: '船长',
-        image: '/images/captain.jpg'
+        // 移除图片引用
       }, 
       content: '欢迎登上迷航游轮，旅客。我是艾莉娅，这艘游轮的船长。你看起来有些迷茫，需要我为你指引方向吗？',
       timestamp: new Date().getTime() - 1800000
@@ -33,7 +33,7 @@ const GamePage = () => {
         id: 1, 
         name: '艾莉娅', 
         role: '船长',
-        image: '/images/captain.jpg'
+        // 移除图片引用
       }, 
       content: '这是个常见的问题，新旅客总是这样。迷航游轮并不"去往"某个地方，而是在时空的缝隙中航行。至于你的记忆...这是游轮的特性之一。别担心，随着旅程的进行，一切都会逐渐明朗。现在，你可以自由探索船上的设施，或者与其他旅客交流。',
       timestamp: new Date().getTime() - 1600000
@@ -95,7 +95,7 @@ const GamePage = () => {
             id: 1, 
             name: '艾莉娅', 
             role: '船长',
-            image: '/images/captain.jpg'
+            // 移除图片引用
           },
           content: generateResponse(inputValue),
           timestamp: new Date().getTime()
@@ -137,14 +137,12 @@ const GamePage = () => {
       id: 2, 
       name: '雷克斯', 
       role: '赏金猎人',
-      image: '/images/bounty-hunter.jpg',
       active: false
     },
     { 
       id: 3, 
       name: '莫里斯', 
       role: '船医',
-      image: '/images/doctor.jpg',
       active: false
     }
   ]
@@ -239,11 +237,11 @@ const GamePage = () => {
                 className={`flex items-center p-2 rounded-lg cursor-pointer ${character.active ? 'bg-primary bg-opacity-10 border border-primary' : 'hover:bg-gray-100 dark:hover:bg-gray-700'}`}
                 onClick={() => setActiveCharacter(character.active ? null : character)}
               >
-                <img 
-                  src={character.image} 
-                  alt={character.name} 
-                  className="w-10 h-10 rounded-full object-cover mr-3" 
-                />
+                <div className="avatar">
+                  <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white font-bold">
+                    {character.name.charAt(0)}
+                  </div>
+                </div>
                 <div>
                   <h3 className="font-medium text-gray-800 dark:text-gray-200">{character.name}</h3>
                   <p className="text-xs text-gray-500">{character.role}</p>
@@ -262,11 +260,11 @@ const GamePage = () => {
                   <div className={`max-w-[80%] ${message.sender === 'system' ? 'bg-gray-200 dark:bg-gray-700 text-center mx-auto' : message.sender === 'player' ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700'} rounded-lg p-3`}>
                     {message.sender === 'character' && (
                       <div className="flex items-center mb-2">
-                        <img 
-                          src={message.character.image} 
-                          alt={message.character.name} 
-                          className="w-6 h-6 rounded-full object-cover mr-2" 
-                        />
+                        <div className="avatar">
+                          <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-white font-bold">
+                            {message.character.name.charAt(0)}
+                          </div>
+                        </div>
                         <div>
                           <span className="font-medium text-gray-800 dark:text-gray-200">{message.character.name}</span>
                           <span className="text-xs text-gray-500 ml-2">{message.character.role}</span>

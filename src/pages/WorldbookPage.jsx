@@ -6,14 +6,14 @@ const WorldbookPage = () => {
       id: 1,
       title: '迷航游轮',
       description: '一艘神秘的游轮，航行在时空的缝隙中，乘客们来自不同的时代和世界。',
-      image: '/images/cruise-ship.jpg',
+      image: './images/cruise-ship/cruise-ship.svg',
       tags: ['奇幻', '悬疑', '冒险']
     },
     {
       id: 2,
       title: '赛博朋克城市',
       description: '高科技与低生活并存的未来都市，巨型企业掌控着一切，黑客和义体改造者在暗处活动。',
-      image: '/images/cyberpunk-city.jpg',
+      image: './images/cyberpunk-city/cyberpunk-city.svg',
       tags: ['科幻', '反乌托邦', '赛博朋克']
     }
   ])
@@ -44,13 +44,9 @@ const WorldbookPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {worldbooks.map((worldbook) => (
             <div key={worldbook.id} className="card bg-base-100 shadow-xl overflow-hidden">
-              <figure className="h-48 overflow-hidden">
-                <img 
-                  src={worldbook.image || '/images/placeholder-world.jpg'} 
-                  alt={worldbook.title}
-                  className="w-full h-full object-cover transition-transform hover:scale-110" 
-                />
-              </figure>
+              <div className="h-24 flex items-center justify-center bg-primary text-white">
+                <span className="text-xl font-bold">{worldbook.title}</span>
+              </div>
               <div className="card-body">
                 <h2 className="card-title text-gray-800 dark:text-gray-200">{worldbook.title}</h2>
                 <p className="text-gray-600 dark:text-gray-400">{worldbook.description}</p>
